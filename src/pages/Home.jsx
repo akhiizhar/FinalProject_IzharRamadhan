@@ -13,6 +13,7 @@ export default function home() {
 			<Navigation />
 
 			{/* <!-- Foto zenix --> */}
+			{/* cek */}
 			<Hero isButton={true} />
 
 			{/* <!-- Our sevices --> */}
