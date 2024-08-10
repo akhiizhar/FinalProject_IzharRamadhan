@@ -52,9 +52,12 @@ export default function Sewa() {
 			<Navigation />
 			<Hero isButton={false} />
 
+			{/* Search sewa mobil */}
 			<section id="search" className="mt-n5" style={{ marginTop: "-40px" }}>
 				<div className="container">
-					<div className="card">
+					<div
+						className="card w-75
+					 center mx-auto p-2">
 						<div className="card-body">
 							<form className="row g-3 justify-content-center" id="form-search">
 								<div className="col-auto">
@@ -134,6 +137,7 @@ export default function Sewa() {
 					</div>
 				</div>
 			</section>
+
 			<section id="search-result" className="my-5">
 				<div className="container">
 					<div className="row">
