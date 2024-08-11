@@ -6,6 +6,7 @@ import Hero from "../components/Hero";
 import { useState } from "react";
 import { listCars } from "../utils/getCars";
 import { Link } from "react-router-dom";
+import InputUser from "../components/InputUser";
 
 export default function Sewa() {
 	const [cars, setCars] = useState(null);
@@ -57,7 +58,59 @@ export default function Sewa() {
 				<div className="container">
 					<div
 						className="card w-75
-					 center mx-auto p-2">
+					 center mx-auto p-2 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+						<div className="card-body">
+							<form className="row g-3 justify-content-center" id="form-search">
+								<InputUser
+									InputType={{
+										type: "option",
+										label: "Tipe Driver",
+									}}
+								/>
+								<InputUser
+									InputType={{
+										type: "date",
+										id: "tanggal",
+										name: "tanggal",
+
+										label: "Tanggal",
+									}}
+								/>
+								<InputUser
+									InputType={{
+										type: "time",
+										id: "jam",
+										name: "jam",
+
+										label: "Waktu / Jam Jemput",
+									}}
+								/>
+								<InputUser
+									InputType={{
+										type: "number",
+										id: "penumpang",
+										name: "capacity",
+										placeholder: "Masukkan Jumlah",
+										label: "Jumlah Penumpang",
+									}}
+								/>
+								<InputUser
+									InputType={{
+										type: "button",
+										id: "cari",
+										label: "Cari Mobil",
+									}}
+								/>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			{/* <section id="search" className="mt-n5" style={{ marginTop: "-40px" }}>
+				<div className="container">
+					<div
+						className="card w-75
+					 center mx-auto p-2 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
 						<div className="card-body">
 							<form className="row g-3 justify-content-center" id="form-search">
 								<div className="col-auto">
@@ -136,7 +189,7 @@ export default function Sewa() {
 						</div>
 					</div>
 				</div>
-			</section>
+			</section> */}
 
 			<section id="search-result" className="my-5">
 				<div className="container">

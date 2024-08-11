@@ -16,7 +16,7 @@ function SewaButton({ show }) {
 
 export default function Hero({ isButton }) {
 	return (
-		<section id="hero" className="bg-red">
+		<section id="hero" className="bg-red" style={{ height: "500px" }}>
 			{/* <!-- container digunakan untuk membatasi lebar content dengan ukuran paling besar adalah 1400px dan konten akan tetap ditengah layar --> */}
 			<div className="container">
 				{/* <!-- row (baris) digunakan untuk menerapkan sistem grid bootstrap --> */}

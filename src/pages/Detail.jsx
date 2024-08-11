@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 
 export default function Detail() {
 	const params = useParams();
@@ -10,6 +11,7 @@ export default function Detail() {
 	return (
 		<>
 			<Navigation />
+
 			<section id="detail">
 				<div className="container">
 					<div className="row align-items-start">
@@ -75,7 +77,8 @@ export default function Detail() {
 					</div>
 				</div>
 			</section>
-			<footer></footer>
+
+			<Footer />
 		</>
 	);
 }
