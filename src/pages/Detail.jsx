@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import Assets from "../assets/image";
 
 export default function Detail() {
 	const params = useParams();
@@ -67,10 +68,23 @@ export default function Detail() {
 								<div className="card-body">
 									<img className="img-fluid" src={data.image} alt={data.name} />
 									<h4>{data.name}</h4>
-									<span>
-										{data.capacity - 2} - {data.capacity} orang
-									</span>
-									<h5>Total {data.price}</h5>
+									<p style={{ fontWeight: "bold", color: "grey" }}>
+										<img src={Assets.User} /> {data.capacity - 2} -{" "}
+										{data.capacity} orang
+									</p>
+									<h5
+										style={{
+											tabSize: 50,
+											whiteSpace: "pre",
+											paddingTop: 50,
+											paddingBottom: 50,
+										}}>
+										{"Total \t"}
+										{new Intl.NumberFormat("id-ID", {
+											style: "currency",
+											currency: "IDR",
+										}).format(data.price)}
+									</h5>
 								</div>
 							</div>
 						</div>

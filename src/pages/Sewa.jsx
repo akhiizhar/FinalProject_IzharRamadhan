@@ -65,6 +65,7 @@ export default function Sewa() {
 									InputType={{
 										type: "option",
 										label: "Tipe Driver",
+										fnChange: handleChange,
 									}}
 								/>
 								<InputUser
@@ -72,8 +73,8 @@ export default function Sewa() {
 										type: "date",
 										id: "tanggal",
 										name: "tanggal",
-
 										label: "Tanggal",
+										fnChange: handleChange,
 									}}
 								/>
 								<InputUser
@@ -81,8 +82,8 @@ export default function Sewa() {
 										type: "time",
 										id: "jam",
 										name: "jam",
-
 										label: "Waktu / Jam Jemput",
+										fnChange: handleChange,
 									}}
 								/>
 								<InputUser
@@ -92,6 +93,7 @@ export default function Sewa() {
 										name: "capacity",
 										placeholder: "Masukkan Jumlah",
 										label: "Jumlah Penumpang",
+										fnChange: handleChange,
 									}}
 								/>
 								<InputUser
@@ -99,6 +101,7 @@ export default function Sewa() {
 										type: "button",
 										id: "cari",
 										label: "Cari Mobil",
+										fnOnClick: handleSearch,
 									}}
 								/>
 							</form>
@@ -106,90 +109,6 @@ export default function Sewa() {
 					</div>
 				</div>
 			</section>
-			{/* <section id="search" className="mt-n5" style={{ marginTop: "-40px" }}>
-				<div className="container">
-					<div
-						className="card w-75
-					 center mx-auto p-2 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-						<div className="card-body">
-							<form className="row g-3 justify-content-center" id="form-search">
-								<div className="col-auto">
-									<label className="form-label">
-										Tipe Driver<span className="text-danger">*</span>
-									</label>
-									<select
-										className="form-select"
-										id="tipedriver"
-										name="typeDriver"
-										required
-										onChange={(e) => handleChange(e)}>
-										<option>Pilih Tipe Driver</option>
-										<option value="Dengan Supir">Dengan Sopir</option>
-										<option value="Lepas Kunci">
-											Tanpa Sopir (Lepas Kunci)
-										</option>
-									</select>
-								</div>
-								<div className="col-auto">
-									<label className="form-label">
-										Tanggal<span className="text-danger">*</span>
-									</label>
-									<input
-										type="date"
-										id="tanggal"
-										name="tanggal"
-										className="form-control"
-										placeholder="Pilih Tanggal"
-										required
-										onChange={(e) => handleChange(e)}
-									/>
-								</div>
-								<div className="col-auto">
-									<label className="form-label">
-										Waktu / Jam Jemput<span className="text-danger">*</span>
-									</label>
-									<select
-										className="form-select"
-										id="jam"
-										name="jam"
-										required
-										onChange={(e) => handleChange(e)}>
-										<option>Pilih Jam Jemput</option>
-										<option value="8">08.00</option>
-										<option value="9">09.00</option>
-										<option value="10">10.00</option>
-										<option value="11">11.00</option>
-										<option value="12">12.00</option>
-									</select>
-								</div>
-								<div className="col-auto">
-									<label className="form-label">
-										Jumlah Penumpang(optional)
-									</label>
-									<input
-										type="number"
-										id="penumpang"
-										className="form-control"
-										placeholder="Jumlah Penumpang"
-										name="capacity"
-										onChange={(e) => handleChange(e)}
-									/>
-								</div>
-								<div className="col-auto">
-									<label className="form-label invisible">cari mobil</label>
-									<button
-										type="button"
-										id="cari"
-										className="btn btn-success d-block"
-										onClick={(e) => handleSearch(e)}>
-										Cari Mobil
-									</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</section> */}
 
 			<section id="search-result" className="my-5">
 				<div className="container">
@@ -205,7 +124,14 @@ export default function Sewa() {
 											/>
 											<div className="card-body">
 												<h6>{e.name}</h6>
-												<label>{e.price}</label>
+												<h5 style={{ fontWeight: "bold" }}>
+													{new Intl.NumberFormat("id-ID", {
+														style: "currency",
+														currency: "IDR",
+													}).format(e.price)}{" "}
+													/ Hari
+												</h5>
+
 												<p>
 													Lorem ipsum dolor sit amet consectetur adipisicing
 													elit. Tempora, accusamus!
